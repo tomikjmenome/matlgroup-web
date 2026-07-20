@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editor / nástroje
+.claude/
+*.bak
+*.log
+
+# node (do budoucna)
+node_modules/
+.next/
+dist/
