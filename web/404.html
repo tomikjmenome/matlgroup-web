@@ -17,31 +17,31 @@
   html,body{margin:0;height:100%;}
   body{
     background:radial-gradient(135% 105% at 50% 26%,#23272c 0%,#141618 58%,#0b0d0e 100%);
-    color:#fff;font-family:'Barlow',sans-serif;overflow-x:hidden;min-height:100%;
+    color:#fff;font-family:'Barlow',sans-serif;overflow:hidden;height:100%;
   }
 
   /* jemná diagonální mřížka + skenovací pruh — přejato z loaderu */
   .bg-grid{position:fixed;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.028) 0 2px,transparent 2px 27px);pointer-events:none;z-index:0;}
   .bg-scan{position:fixed;top:-12%;bottom:-12%;width:36%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.045),transparent);transform:skewX(-14deg);animation:mgScan 6s ease-in-out infinite;pointer-events:none;z-index:0;}
 
-  .wrap{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 24px;}
+  .wrap{position:relative;z-index:1;height:100vh;height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 24px;}
 
-  .logo{width:min(72%,345px);margin-bottom:6px;filter:drop-shadow(0 8px 22px rgba(0,0,0,.55));}
+  .logo{width:min(66%,320px);margin-bottom:-4px;filter:drop-shadow(0 8px 22px rgba(0,0,0,.55));}
 
-  .eyebrow{display:flex;align-items:center;gap:14px;margin:22px 0 6px;}
+  .eyebrow{display:flex;align-items:center;gap:14px;margin:10px 0 0;}
   .eyebrow .bars{display:flex;gap:6px;}
-  .eyebrow .bars span{width:7px;height:22px;background:#D2232E;transform:skewX(-28deg);}
-  .eyebrow .txt{font:600 15px 'Barlow',sans-serif;letter-spacing:3px;color:#c9ccd0;text-transform:uppercase;}
+  .eyebrow .bars span{width:7px;height:20px;background:#D2232E;transform:skewX(-28deg);}
+  .eyebrow .txt{font:600 clamp(12px,1.6vw,15px) 'Barlow',sans-serif;letter-spacing:3px;color:#c9ccd0;text-transform:uppercase;}
 
   .code{
-    position:relative;margin:4px 0 2px;font:italic 900 clamp(120px,26vw,260px)/.9 'Barlow Condensed',sans-serif;
+    position:relative;margin:0;font:italic 900 clamp(96px,20vh,200px)/.9 'Barlow Condensed',sans-serif;
     letter-spacing:2px;color:#D2232E;user-select:none;
   }
 
-  h1{margin:12px 0 0;font:italic 900 clamp(34px,6vw,60px)/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:1px;}
-  .lead{margin:18px auto 0;max-width:520px;font:400 18px/1.6 'Barlow',sans-serif;color:#c3c6c9;}
+  h1{margin:2px 0 0;font:italic 900 clamp(30px,5vw,54px)/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:1px;}
+  .lead{margin:14px auto 0;max-width:520px;font:400 clamp(15px,2vw,18px)/1.55 'Barlow',sans-serif;color:#c3c6c9;}
 
-  .actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:22px;margin-top:38px;}
+  .actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:22px;margin-top:26px;}
   .btn{
     display:inline-block;background:#D2232E;color:#fff;font:italic 700 22px 'Barlow Condensed',sans-serif;
     text-transform:uppercase;letter-spacing:1px;padding:16px 34px;transform:skewX(-8deg);
@@ -54,7 +54,7 @@
   .link{color:#fff;font:600 18px 'Barlow',sans-serif;text-decoration:none;border-bottom:2px solid #D2232E;padding-bottom:3px;}
   .link:hover{color:#f1f1f1;}
 
-  .foot{margin-top:46px;font:500 14px 'Barlow',sans-serif;color:#8a8d90;letter-spacing:.3px;}
+  .foot{margin-top:28px;font:500 14px 'Barlow',sans-serif;color:#8a8d90;letter-spacing:.3px;}
   .foot a{color:#c3c6c9;text-decoration:none;}
   .foot a:hover{color:#fff;}
 </style>
