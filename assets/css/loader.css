@@ -1,0 +1,29 @@
+/* MG Loader — přenositelná loading komponenta (logo + červený záblesk) */
+/* Závislosti: font 'Barlow' (volitelně) + --logo:url(...) nastavené na .mg-logo */
+  /* --- custom loading screen s logem (ukázka — nahradí boring kolečko) --- */
+  .mg-loader{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;
+    background:radial-gradient(135% 105% at 50% 32%,#23272c 0%,#141618 58%,#0b0d0e 100%);overflow:hidden;z-index:3;}
+  .mg-loader__grid{position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.028) 0 2px,transparent 2px 27px);pointer-events:none;}
+  .mg-loader__tag{position:absolute;top:18px;right:20px;z-index:4;font:600 10.5px 'Barlow',sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:#8a8d90;border:1px solid #34383d;border-radius:3px;padding:5px 10px;background:rgba(255,255,255,.03);}
+  .mg-loader__scan{position:absolute;top:-12%;bottom:-12%;width:36%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:skewX(-14deg);animation:mgScan 3s ease-in-out infinite;pointer-events:none;}
+  @keyframes mgScan{0%{left:-45%}100%{left:112%}}
+  .mg-logo{position:relative;width:min(72%,300px);animation:mgBreath 2.6s ease-in-out infinite;}
+  .mg-logo img{display:block;width:100%;height:auto;filter:drop-shadow(0 8px 22px rgba(0,0,0,.55));}
+  @keyframes mgBreath{0%,100%{transform:scale(.975)}50%{transform:scale(1.025)}}
+  .mg-logo__shine{position:absolute;inset:0;
+    -webkit-mask:var(--logo) center/contain no-repeat;mask:var(--logo) center/contain no-repeat;
+    background:linear-gradient(100deg,transparent 40%,rgba(255,59,71,.15) 47%,#ff3b47 50%,rgba(255,59,71,.15) 53%,transparent 60%);
+    background-size:260% 100%;background-repeat:no-repeat;animation:mgLogoShine 2.3s cubic-bezier(.5,0,.2,1) infinite;mix-blend-mode:screen;}
+  @keyframes mgLogoShine{0%{background-position:135% 0}100%{background-position:-135% 0}}
+  .mg-track{position:absolute;bottom:64px;left:50%;transform:translateX(-50%) skewX(-14deg);width:min(58%,240px);height:5px;background:#26292e;overflow:hidden;border-radius:2px;}
+  .mg-track::after{content:"";position:absolute;top:0;bottom:0;width:42%;background:linear-gradient(90deg,#ff313d,#bd1620);box-shadow:0 0 12px rgba(210,35,46,.6);animation:mgTrack 1.5s cubic-bezier(.65,0,.35,1) infinite;}
+  @keyframes mgTrack{0%{left:-42%}100%{left:100%}}
+  .mg-loader__sub{position:absolute;bottom:36px;left:0;right:0;text-align:center;font:600 12px 'Barlow',sans-serif;letter-spacing:5px;color:#7a7d81;}
+  .mg-loader__sub::after{content:"";display:inline-block;width:1em;text-align:left;animation:mgDots 1.4s steps(1,end) infinite;}
+  @keyframes mgDots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}100%{content:""}}
+
+  /* --- načítání fotek: obrázek se odkryje až po stažení, loader mezitím běží --- */
+  /* použití: <img class="img-load" data-src="cesta.jpg" alt="..."> uvnitř .img-slot */
+  .img-load{opacity:0;transition:opacity .6s ease;}
+  .img-load.is-loaded{opacity:1;}
+  .mg-loader.is-done{opacity:0;pointer-events:none;transition:opacity .45s ease;}
