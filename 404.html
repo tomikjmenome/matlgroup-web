@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stránka nenalezena (404) — Matl Automotive Group</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/matlgroup-web/assets/media/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="512x512" href="/matlgroup-web/assets/media/favicon-512.png">
+<link rel="apple-touch-icon" href="/matlgroup-web/assets/media/favicon-512.png">
+
+<link rel="stylesheet" href="/matlgroup-web/assets/css/fonts.css">
+<link rel="stylesheet" href="/matlgroup-web/assets/css/loader.css">
+
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;}
+  body{
+    background:radial-gradient(135% 105% at 50% 26%,#23272c 0%,#141618 58%,#0b0d0e 100%);
+    color:#fff;font-family:'Barlow',sans-serif;overflow-x:hidden;min-height:100%;
+  }
+
+  /* jemná diagonální mřížka + skenovací pruh — přejato z loaderu */
+  .bg-grid{position:fixed;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.028) 0 2px,transparent 2px 27px);pointer-events:none;z-index:0;}
+  .bg-scan{position:fixed;top:-12%;bottom:-12%;width:36%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.045),transparent);transform:skewX(-14deg);animation:mgScan 6s ease-in-out infinite;pointer-events:none;z-index:0;}
+
+  .wrap{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 24px;}
+
+  .logo{width:min(60%,230px);margin-bottom:6px;filter:drop-shadow(0 8px 22px rgba(0,0,0,.55));}
+
+  .eyebrow{display:flex;align-items:center;gap:14px;margin:22px 0 6px;}
+  .eyebrow .bars{display:flex;gap:6px;}
+  .eyebrow .bars span{width:7px;height:22px;background:#D2232E;transform:skewX(-28deg);}
+  .eyebrow .txt{font:600 15px 'Barlow',sans-serif;letter-spacing:3px;color:#c9ccd0;text-transform:uppercase;}
+
+  .code{
+    position:relative;margin:4px 0 2px;font:italic 900 clamp(120px,26vw,260px)/.9 'Barlow Condensed',sans-serif;
+    letter-spacing:2px;color:#fff;user-select:none;
+  }
+  .code .z{color:#D2232E;text-shadow:0 12px 40px rgba(210,35,46,.4);}
+  /* jemný odlesk přejíždějící přes číslo */
+  .code::after{
+    content:"404";position:absolute;inset:0;
+    background:linear-gradient(100deg,transparent 42%,rgba(255,255,255,.55) 50%,transparent 58%);
+    background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:mgLogoShine 3.4s cubic-bezier(.5,0,.2,1) infinite;pointer-events:none;
+  }
+
+  h1{margin:12px 0 0;font:italic 900 clamp(34px,6vw,60px)/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:1px;}
+  .lead{margin:18px auto 0;max-width:520px;font:400 18px/1.6 'Barlow',sans-serif;color:#c3c6c9;}
+
+  .actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:22px;margin-top:38px;}
+  .btn{
+    display:inline-block;background:#D2232E;color:#fff;font:italic 700 22px 'Barlow Condensed',sans-serif;
+    text-transform:uppercase;letter-spacing:1px;padding:16px 34px;transform:skewX(-8deg);
+    box-shadow:0 10px 30px rgba(210,35,46,.35);text-decoration:none;transition:background .2s,transform .2s;
+  }
+  .btn:hover{background:#b81c26;transform:skewX(-8deg) translateY(-3px);}
+  .btn span{display:inline-block;transform:skewX(8deg);}
+  .btn--ghost{background:#101113;box-shadow:none;}
+  .btn--ghost:hover{background:#1c1f22;transform:skewX(-8deg) translateY(-3px);}
+  .link{color:#fff;font:600 18px 'Barlow',sans-serif;text-decoration:none;border-bottom:2px solid #D2232E;padding-bottom:3px;}
+  .link:hover{color:#f1f1f1;}
+
+  .foot{margin-top:46px;font:500 14px 'Barlow',sans-serif;color:#8a8d90;letter-spacing:.3px;}
+  .foot a{color:#c3c6c9;text-decoration:none;}
+  .foot a:hover{color:#fff;}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-scan"></div>
+
+<div class="wrap">
+
+  <img class="logo" src="/matlgroup-web/assets/media/e50ef4c6-83f6-4ae4-a96a-efd81e74224e.png" alt="Matl Automotive Group">
+
+  <div class="eyebrow">
+    <span class="bars"><span></span><span></span><span></span></span>
+    <span class="txt">Matl Automotive Group · Rajhradice u Brna</span>
+  </div>
+
+  <div class="code">4<span class="z">0</span>4</div>
+
+  <h1>Tady jsme zajeli mimo trasu</h1>
+  <p class="lead">Stránka, kterou hledáte, neexistuje nebo byla přesunuta. Nevadí — vraťte se na hlavní stránku a najdeme, co potřebujete.</p>
+
+  <div class="actions">
+    <a class="btn" href="/matlgroup-web/"><span>← Zpět na úvod</span></a>
+    <a class="btn btn--ghost" href="tel:+420732760085"><span>Zavolat 732 760 085</span></a>
+  </div>
+
+  <p class="foot">
+    Nebo přejděte rovnou na <a href="/matlgroup-web/#sluzby-g">Služby</a> ·
+    <a href="/matlgroup-web/#galerie-g">Galerie</a> ·
+    <a href="/matlgroup-web/#kontakt-g">Kontakt</a><br>
+    Opatovická 8, 664 61 Rajhradice
+  </p>
+
+</div>
+
+</body>
+</html>
